@@ -1,0 +1,14 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test-conf.js"
+  },
+  "author": "Michael Petrusevich",
+  "license": "ISC",
+  "dependencies": {
+    "protractor": "^5.3.1"
+  }
+}
