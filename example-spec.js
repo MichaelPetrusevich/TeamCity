@@ -1,4 +1,4 @@
-var angulario = require('./angularioPageOb.js');
+let angulario = require('./angularioPageOb.js');
 
 describe('test page angular.io/docs/', function () {
 
@@ -29,33 +29,27 @@ describe('test page angular.io/docs/', function () {
     describe('testing left menu', function () {
 
         it('open menu', async function () {
-            let classes = await angulario.OpenMenu.getAttribute('class');
+            let classes = await angulario.getOpenMenu.getAttribute('class');
             expect(classes).toContain('sidenav-open');
         });
 
         it('testing menu', async function () {
-            await angulario.LeftButton.click();
+            await angulario.clickVerticalButton.click();
             let EC = protractor.ExpectedConditions;
-            await browser.wait(EC.invisibilityOf(angulario.Side));
-            let classes = await angulario.OpenMenu.getAttribute('class');
+            await browser.wait(EC.invisibilityOf(angulario.Sidenav));
+            let classes = await angulario.getOpenMenu.getAttribute('class');
             expect(classes).toContain('sidenav-closed');
         });
 
         it('testing left menu->GETTING STARTED', async function () {
-            //await angulario.getListNavItems.get(0).click();
-            await angulario.GettingStarted.click();
+            await angulario.getGettingStarted.click();
             expect(browser.getCurrentUrl()).toEqual('https://angular.io/guide/quickstart');
         });
-    });
-
-    //тестирование нижнего меню
-/*    describe('testing footer',async function () {
 
         it('testing Japanese localization',async function () {
             await angulario.getJapan.click();
             expect(browser.getCurrentUrl()).toEqual('https://angular.jp/');
         });
     });
-*/
 
 });

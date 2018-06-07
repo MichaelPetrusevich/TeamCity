@@ -1,14 +1,13 @@
-function angularioPageOb() {
-    return {
-        LeftButton: $('button.hamburger.mat-button'),
-        OpenMenu: $('aio-shell'),
-        Side: $('mat-sidenav.sidenav.mat-sidenav'),
-        getHome: $('a.nav-link.home[href="/"]'),
-        getFeatures: $('a.nav-link[href="features"]'),
-        getResources: $('a.nav-link[href="resources"]'),
-        GettingStarted: $('aio-nav-menu').$('[title="A gentle introduction to Angular."]'),
-        getJapan: $('.link[title="日本語版"]'),
-    };
-}
+let angularioPageOb = function () {
+  this.getHome = $('[title="Home"]');
+  this.getFeatures = $('a.nav-link[href="features"]');
+  this.getResources = $('a.nav-link[href="resources"]');
+  this.clickVerticalButton = $('button.hamburger.mat-button');
+  this.getOpenMenu = $('aio-shell');
+  this.Sidenav = $('mat-sidenav.sidenav.mat-sidenav');
+  this.getGettingStarted = $('aio-nav-menu').$('[title="A gentle introduction to Angular."]');
+  this.getJapan = element(by.css('.link[title="日本語版"]'));
+
+};
 
 module.exports = new angularioPageOb();
