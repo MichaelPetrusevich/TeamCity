@@ -1,15 +1,17 @@
 // An example configuration file
 exports.config = {
 
+    //фреймворк для тестов
     framework: 'jasmine',
-    // The address of a running selenium server.
+    // адрес запущенного селениум сервера
     seleniumAddress: 'http://localhost:4444/wd/hub',
 
-    // Capabilities to be passed to the webdriver instance.
+    // выбор браузера с параметрами.
     capabilities: {
         browserName: 'chrome'
     },
 
+    //колбэк который будет выполнен, когда протрактор готов к работе, но тесты еще не начали выполняться
     onPrepare: function () {
         var AllureReporter = require('jasmine-allure-reporter');
 
@@ -34,6 +36,7 @@ exports.config = {
     // to protractor (in this example config.js).
     // They may include glob patterns.
 
+    //пути к файлам сценариев тестов
     specs: ['./*-spec.js'],
 
     SELENIUM_PROMISE_MANAGER: false,
